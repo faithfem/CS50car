@@ -13,14 +13,14 @@ int main(int argc, string argv[])
     return 1;
     }
     else{
-    int k = atoi(argv[1]);
-    printf("plaintext: ");
+    int k = atoi(argv[1]); // contains the first argument & will convert this to an integer
+    printf("plaintext: "); // the first argument is contained in here
     string userWord = get_string();
     printf("ciphertext: ");
 
-    for (int i = 0; i < strlen(userWord); i++)
-    {       if (isalpha(userWord[i]))           // Check if character is alpha
-            {   if(isupper(userWord[i]))        // Check if user input is in upper or lower case
+    for (int i = 0; i < strlen(userWord); i++) // for the first integer in the argument, if less than the length of the word provided, do below
+    {       if (isalpha(userWord[i]))           // But first check if the character is alpha
+            {   if(isupper(userWord[i]))        // Secondly, check if user input is in upper or lower case, then do as below
                 {
                  printf("%c", ((userWord[i] - 'A' + k))%26+'A'); // Character less value of A which is 65 plus the key,
                 }
