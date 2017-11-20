@@ -247,21 +247,33 @@ bool move(int tile)
     return false;
 }
 
-/**
- * Returns true if game is won (i.e., board is in winning configuration),
- * else false.
- */
+//RETURNS TRUE IF YOU WIN GAME
+
 bool won(void)
 {
 
-    int counter = 0;
-    int j = 0;
-    for (int i = 0; i < d; i++)
+int row, column;
+int y = d*d;
+int x;
+
+if (board[d-1][d-1] != 0)
+{
+    return false;
+}
+
+for (row = 0, x = 1; row < d && x < y-1; row++)
+{
+    for (column = 0; column < d; column++)
     {
-        if (++counter != (d * d) && board[i][j] != counter)
+        if (board[row][column] == x)
+        {
+            x++;
+        }
+        else if (board[row][column])
         {
             return false;
         }
     }
-    return true;
+}
+return true;
 }
