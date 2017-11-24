@@ -8,7 +8,7 @@
  * where n is number of pseudorandom numbers to print
  * and s is an optional seed
  */
-
+ 
 #define _XOPEN_SOURCE
 
 #include <cs50.h>
@@ -21,17 +21,17 @@
 
 int main(int argc, string argv[])
 {
-    // TODO: CHECKS IF THE NUMBER OF ARGUMENTS ARE 2 AND 3. IF THEY ARE (IF TRUE) ERROR OUT. IF NOT, CONTINUE WITH CODE BELOW
+    // TODO: comment me
     if (argc != 2 && argc != 3)
     {
         printf("Usage: ./generate n [s]\n");
         return 1;
     }
 
-    // TODO: INT N SHOULD BE AN INTEGER AND IF NOT, CONVERT THE ALPHA TO AN INTEGER
+    // TODO: comment me
     int n = atoi(argv[1]);
 
-    // TODO: IF THE NUMBER OF ARGUMENTS ARE 3, (IF TRUE), SEED WITH AN INTEGER
+    // TODO: comment me
     if (argc == 3)
     {
         srand48((long) atoi(argv[2]));
@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         srand48((long) time(NULL));
     }
 
-    // TODO: LOOP: IF THE INTEGER IS 0 AND AS LONG AS IT'S LESS THAN N, RETURN THE VALUE OF THE RANDOM GENERATED NUMBER UP TO THE LIMIT DEFINED EARLIER
+    // TODO: comment me
     for (int i = 0; i < n; i++)
     {
         printf("%i\n", (int) (drand48() * LIMIT));
